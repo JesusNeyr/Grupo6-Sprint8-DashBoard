@@ -9,6 +9,7 @@ function HeaderLeft() {
         <li className="headerLeftLi"><Link className="linkNav" to='/'>Inicio</Link></li>
         <li className="headerLeftLi"><Link className="linkNav" to='/products'>Productos</Link></li>
         <li className="headerLeftLi"><Link className="linkNav" to='/users'>Usuarios</Link></li>
+        <li className="headerLeftLi"><Link className="linkNav" to='/products/create'>Crear productos</Link></li>
     </ul>
   );
 }

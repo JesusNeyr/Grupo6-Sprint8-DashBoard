@@ -1,10 +1,10 @@
 import React from "react";
 
-const infoPrin = () => {
+const infoPrin = (props) => {
     return ( 
         <div className="infoPrin">
-            <div>Usuario registrados</div>
-            <div>3</div>
+            <div>{props.title}</div>
+            <div>{props.numbers}</div>
         </div>
     );
 }

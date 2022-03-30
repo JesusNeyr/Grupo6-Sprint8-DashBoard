@@ -1,17 +1,13 @@
 import React from "react"
-import InfoPrin from "../InfoPrin";
 import LastProductHome from "../LastProductHome";
 import CategoryHome from "../CategorysHome";
 import CardHome from "../CardHome";
+import Panels from "./Panels";
 
 const Home = () => {
     return ( 
         <React.Fragment>
-            <div className="contInfoPrin">
-                <InfoPrin />
-                <InfoPrin />
-                <InfoPrin />
-                </div>
+            <Panels/>
             <div className="contMoreInfo">
                 <CardHome>
                     <LastProductHome titleProduct="nuevo"/>

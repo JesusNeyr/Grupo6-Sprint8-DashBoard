@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 import NotFound from "./NotFound";
 import '../asset/css/rightCont.css'
 import Products from "./pages/Products";
+import NewProduct from "./crud/NewProduct";
 
 function RightCont() {
   return (
@@ -27,6 +28,7 @@ function RightCont() {
                   <Route path="/" element={<Home />} />
                   <Route path="/users" element={<Users />} />
                   <Route path="/products" element={<Products />} />
+                  <Route path="/products/create" element={<NewProduct />} />
                   <Route component={NotFound} />
                 </Routes>
               
