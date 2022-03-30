@@ -1,6 +1,22 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react"; 
 const Users = () => {
+    const [cardUsersCount,setCardUsersCount] = useState([]);
+    
+    useEffect(()=>{
+
+        fetch('/api/users')
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+           
+            console.log(data);
+            setCardUsersCount(data.total)
+        })
+
+    },[cardUsersCount]);
+    
+
     return ( 
         <div className="gridUserContPage">
             <div className="gridUserTitleUserPage">
