@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react"; 
 const Users = () => {
-    const [cardUsersCount,setCardUsersCount] = useState([]);
+    const [Users,setUsers] = useState([]);
     
     useEffect(()=>{
-
         fetch('/api/users')
         .then(response => {
             return response.json()
         })
         .then(data => {
-           
-            console.log(data);
-            setCardUsersCount(data.total)
+            setUsers(data.users.data)
         })
+        
+    },[Users]);
 
-    },[cardUsersCount]);
-    
 
     return ( 
         <div className="gridUserContPage">
@@ -28,24 +25,18 @@ const Users = () => {
                 <div>Apellido</div>
                 <div>Email</div>
             </div>
-            <div className="gridUserItemPage">
-                <div>1</div>
-                <div>Usuario 1</div>
-                <div>Apellido 1</div>
-                <div>email@pruebas.com</div>
-            </div>
-            <div className="gridUserItemPage">
-                <div>2</div>
-                <div>Usuario 2</div>
-                <div>Apellido 2</div>
-                <div>email@pruebas.com</div>
-            </div>
-            <div className="gridUserItemPage">
-                <div>3</div>
-                <div>Usuario 3</div>
-                <div>Apellido 3</div>
-                <div>email@pruebas.com</div>
-            </div>
+            {Users.length === 0 ? "cargando..." : null}
+            { Users.map((user,i) =>{
+                return (
+                    <div key={user.first_name+i} className="gridUserItemPage">
+                        <div>{user.id}</div>
+                        <div>{user.first_name}</div>
+                        <div>{user.last_name}</div>
+                        <div>{user.email}</div>
+                    </div>
+                )
+                })
+            }
         </div>
     );
 }
