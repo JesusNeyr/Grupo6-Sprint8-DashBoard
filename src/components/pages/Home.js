@@ -4,15 +4,15 @@ import CategoryHome from "../CategorysHome";
 import CardHome from "../CardHome";
 import Panels from "./Panels";
 
-const Home = () => {
-   
 
+const Home = () => {
+    
     return ( 
         <React.Fragment>
             <Panels/>
             <div className="contMoreInfo">
                 <CardHome>
-                    <LastProductHome titleProduct="nuevo"/>
+                    <LastProductHome />
                 </CardHome>
                 <CardHome>
                     <CategoryHome />
