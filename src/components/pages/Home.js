@@ -5,15 +5,6 @@ import CardHome from "../CardHome";
 import Panels from "./Panels";
 
 const Home = () => {
-    const [produc1,setVariableActualizaProduc1] = useState([]);
-    
-    useEffect(()=>{
-        fetch('/api/products/lasProduct')
-        .then(response =>response.json)
-        .then(data => setVariableActualizaProduc1(data))
-        
-        },[]);
-
     return ( 
         <React.Fragment>
             <Panels/>
