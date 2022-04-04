@@ -2,9 +2,9 @@ import React from "react";
 import HeaderTop from "./HeaderTop";
 import Footer from "./Footer";
 // import InfoPrin from "./InfoPrin";
-// import CategoryHome from "./CategorysHome";
-// import LastProductHome from "./LastProductHome";
-// import CardHome from "./CardHome";
+//import CategoryHome from "./pages/CategorysHome;
+//import LastProductHome from "./LastProductHome";
+//import CardHome from ".pages/CardHome";
 import { Route, Routes,} from 'react-router-dom'
 import Home from "./pages/Home";
 import Users from "./pages/Users";
