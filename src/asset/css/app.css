@@ -17,10 +17,24 @@ footer{
     color: #f3f0d7;
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
+    cursor: pointer;
 }
 .linkNav{
     color: #000;
     text-decoration: none;
+}
+.messageForm{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+.successMsg{
+    background: #d1e7dd;
+    color: #0f5132;
+}
+.msgOcultar{
+    display: none;
 }
 @media only screen and (min-width: 768px){
 

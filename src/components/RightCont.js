@@ -12,6 +12,9 @@ import NotFound from "./NotFound";
 import '../asset/css/rightCont.css'
 import Products from "./pages/Products";
 import NewProduct from "./crud/NewProduct";
+import EditProduct from "./crud/EditProduct";
+import ContactForm from "./pages/ContactForm";
+import ContactFormView from "./pages/ContactFormView";
 
 function RightCont() {
   return (
@@ -29,7 +32,10 @@ function RightCont() {
                   <Route path="/users" element={<Users />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/products/create" element={<NewProduct />} />
-                  <Route component={NotFound} />
+                  <Route path="/products/edit/:id" element={<EditProduct />} />
+                  <Route path="/contact" element={<ContactForm />} />
+                  <Route path="/contact/:id" element={<ContactFormView />} />
+                  <Route component={<NotFound/>} />
                 </Routes>
               
         </div>

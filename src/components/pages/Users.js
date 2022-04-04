@@ -11,7 +11,7 @@ const Users = () => {
             setUsers(data.users.data)
         })
         
-    },[Users]);
+    },[]);
 
 
     return ( 
