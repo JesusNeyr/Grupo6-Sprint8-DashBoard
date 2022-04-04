@@ -20,8 +20,5 @@ const LastProductHome = () => {
         </React.Fragment>
      );
 }
-//LastProductHome.defaultProps ={
-//    titleProduct: 'undefined'
-//}
  
 export default LastProductHome;

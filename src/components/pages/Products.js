@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"; 
+import Modal from "../Modal";
 
 const Products = () => {
     const [Products,setProducts] = useState([]);
@@ -12,10 +13,43 @@ const Products = () => {
             setProducts(data.products.data)
         })
         
-    },[Products]);
+    },[]);
 
+    const [modal,setModal] = useState(false)
+    const [productSelect,setProductSelect] = useState({
+        id: ''
+    })
+    // let modalView = ()=>{
+    //     setModal(true)
+    // }
+    let modalHidden = ()=>{
+        setModal(false)
+    }
+    const modalDeleteConfirm = (id)=>{
+        const resquestInit = {
+            method: "DELETE",
+            headers:{
+                "Access-Control-Allow-Origin":"*",
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            },
+            body: null
+        }
+        fetch(`/api/products/delete/${id}`,resquestInit)
+        .then(r => r.json())
+        .then(d => console.log(d))
+        
+        setProducts(Products.filter(product => product.id !== id))
+        setModal(false)
+    }
+    const selectProductModal = (element)=>{
+        setProductSelect(element);
+        setModal(true)
+    }
 
-    return ( 
+    return (
+        <React.Fragment> 
+        {modal === false ? null : <Modal modelHidden={modalHidden} modelDelete={()=> modalDeleteConfirm(productSelect)} />}
         <div className="gridProductContPage">
             <div className="gridProductTitleProductPage">
                 Lista de Productos
@@ -43,18 +77,14 @@ const Products = () => {
                         <div className="gridProductItemOculto">{product.stock_max}</div>
                         <div className="gridProductItemOculto">{product.stock_min}</div>
                         <div className="gridProductItemOculto">{product.category}</div>
-                        <div className="gridProductItemVisible boton"> <button type="submit" >Editar</button></div>
-                        <div className="gridProductItemVisible boton"><form action="">
-                            <button type="submit" >Eliminar</button>
-                        </form>
-                        </div>
-                        
+                        <div className="gridProductItemVisible boton"> <a href={`/products/edit/${product.id}`}><button className="btnDashboard" type="button" ><i class="far fa-edit"></i></button></a></div>
+                        <div className="gridProductItemVisible boton"><button onClick={()=> selectProductModal(product.id)} className="btnDashboard" type="button" ><i class="fas fa-trash-alt"></i></button></div>       
                     </div>
                 )
                 })
             }
         </div>
-       
+        </React.Fragment>
     );
 }
 // <div className="gridUserContPage">
