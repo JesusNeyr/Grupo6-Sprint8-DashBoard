@@ -5,6 +5,8 @@ import CardHome from "../CardHome";
 import Panels from "./Panels";
 
 const Home = () => {
+   
+
     return ( 
         <React.Fragment>
             <Panels/>
