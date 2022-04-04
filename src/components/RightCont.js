@@ -5,11 +5,12 @@ import Footer from "./Footer";
 // import CategoryHome from "./CategorysHome";
 // import LastProductHome from "./LastProductHome";
 // import CardHome from "./CardHome";
-import { Route, Routes,} from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import Home from "./pages/Home";
 import Users from "./pages/Users";
 import NotFound from "./NotFound";
-import '../asset/css/rightCont.css'
+import '../asset/css/rightCont.css';
+import '../asset/css/productStyle.css'
 import Products from "./pages/Products";
 import NewProduct from "./crud/NewProduct";
 
@@ -18,11 +19,7 @@ function RightCont() {
     <div className="rightCont">
         <div className="contRightCont">
             <HeaderTop />
-            {/* <Routes>
-              <Route path="/" exact={true} component={<Home/>} />
-              <Route path="/users" exact={true} component={Users} />
-              <Route path="/products" exact={true} component={Products} />
-            </Routes> */}
+            
               
                 <Routes>
                   <Route path="/" element={<Home />} />
